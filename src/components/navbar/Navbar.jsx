@@ -1,14 +1,16 @@
 import Logo from '../logo/Logo'
+import Action from './Action'
 import MobileNavigation from './MobileNavigation'
 import Navigation from './Navigation'
 
 const Navbar = () => {
   return (
-    <div className='flex justify-between items-center'>           
+    <header className='flex justify-between items-center py-10 bg-slate-50'>           
           <Logo />
           <Navigation/>
-          <MobileNavigation/>
-    </div>
+      <MobileNavigation />
+      <Action/>
+    </header>
   )
 }
 
