@@ -16,7 +16,7 @@ const Signup = () => {
      <Logo/>
 
      <h1 className=" font-display font-bold text-4xl mt-5 mb-4">Sign up</h1>
-     <p className="mb-5">Don't have an account? <Link className="font-semibold text-[#0094FF]">Sign up</Link></p>
+     <p className="mb-5">Don`&apos;`t have an account? <Link className="font-semibold text-[#0094FF]">Sign up</Link></p>
 
 
      <Input
