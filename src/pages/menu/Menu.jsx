@@ -20,16 +20,25 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { Input } from "@/components/ui/input";
 
 
 const Menu = () => {
 
   const [position, setPosition] =useState("bottom")
+  const inputRef = useRef(null)
+
+  useEffect(()=>{
+    
+    inputRef.current.focus()
+  },[])
+  
   return (
     <section className="w-[1162px] mx-auto mt-10">
       <h1 className=' title-centered'>Menu</h1>
-       
+
+       {/* Sort by category */}
       <div className='flex flex-wrap justify-between gap-4 w-full mb-10'>
          <div>  
         <Button size="lg">All Category</Button>
@@ -37,7 +46,11 @@ const Menu = () => {
         <Button variant="ghost" size="lg">Lunch  </Button>
         <Button variant ="ghost" size="lg">Dessert  </Button>
         <Button variant="ghost" size="lg">Drink</Button>
-  </div>
+      </div>
+
+      {/* Search */}
+      <Input ref={inputRef} placeholder="Search..." className="w-[200px]    rounded-full border border-slate-200  text-sm ring-offset-white file:border-0 file:bg-transparent  placeholder:text-slate-500 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:cursor-not-allowed" />
+
 
 
     
