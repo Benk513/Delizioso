@@ -9,7 +9,6 @@ import { yupResolver } from "@hookform/resolvers/yup"
 import { useForm } from "react-hook-form"
 import useUserStore from "@/store/useUserStore"
 import {Loader2 } from "lucide-react"
-import { toast } from "sonner"
 import { DevTool } from "@hookform/devtools"
 
 
@@ -23,22 +22,16 @@ const schema = yup
   })
   .required()
 
-const defaultValues ={
-  email: "",
-  password: "",
-}
+const defaultValues ={ email: "", password: "",}
+
 
 const Login = () => {
- 
- 
   const {login,loading} = useUserStore()
   const {register,control,formState: { errors,isValid},handleSubmit} = useForm({resolver: yupResolver(schema) ,mode:'onChange',defaultValues:defaultValues})
- 
-  
-  
-  const onSubmit = async (data) => {
-      login(data)
-  }
+
+
+
+  const onSubmit = async (data) =>   login(data)
 
   return (
     <div className="h-screen w-full bg-slate-50 flex items-center justify-center">
@@ -81,7 +74,7 @@ const Login = () => {
             </div>
             <Link onClick={() =>{
               console.log('hit !!')
-              toast.success('hey')
+            
               }
             }>Forget Password?</Link>
             </div>
