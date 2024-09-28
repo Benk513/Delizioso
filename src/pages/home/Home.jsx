@@ -1,14 +1,19 @@
 import Banner from "@/components/banner/Banner"
-import Navbar from "@/components/navbar/Navbar"
- 
+import Welcome from "@/components/welcome/Welcome"
+import Menu from "@/components/menu/Menu"
+import Team from "@/components/team/Team"
 const Home = () => {
-  return (
-    <div className="bg-red-200 container  ">
-           
-      <Navbar />
-      <Banner/>
-          
+  return (   
+    <main>
+    {/* <div className="w-[1162px] mx-auto  "> */}
+      <div>
+      <Banner />
+      <Welcome />
+      <Menu />      
+      <Team />          
     </div>
+    </main>
+  
   )
 }
 

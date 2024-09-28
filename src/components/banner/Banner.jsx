@@ -1,13 +1,14 @@
- import { Button } from '../ui/button'
+ import { Link } from 'react-router-dom'
+import { Button } from '../ui/button'
 //   import {bannerSpaghetti} from "./../../data/image"
 import bannerSpaghetti from '/images/bannerSpaghetti.png'
 import choux1 from '/images/choux1.png'
 import choux2 from '/images/choux2.png'
 const Banner = () => {
   return (
-      <section className='flex   h-[80vh] bg-slate-500'>
+      <section className='w-[1162px] mx-auto flex   h-[80vh]  mt-10'>
           
-          <div className='w-1/2 bg-green-600  '>
+          <div className='w-1/2   '>
               {/* Badge */}
               <div className='mt-[5rem] px-8 py-2 bg-[#FFE8CC] inline-block rounded-full '><p className='text-accent'>Restauran</p>
               </div>
@@ -22,19 +23,19 @@ const Banner = () => {
               {/* Call to action buttons */}
               <div className='mt-[2rem] gap-4 flex'>
                   <Button variant="accent" size="lg">Order now   </Button>
-                  <Button variant="secondary" size="lg">Reservation  </Button>
+                  <Link variant="secondary" size="lg" to={'/reservation'} ><Button variant="accent" size="lg">Reervation</Button></Link>
               </div>
           </div>
 
 
 
           <div className='relative w-1/2'>
-              <img src={bannerSpaghetti}  className="z-10 w-[492px ]"alt="food image" />
+              <img src={bannerSpaghetti}  className=" absolute-centered z-10 w-[492px ]"alt="food image" />
               <img
-                  src={choux2}  className='absolute top-0 z-0'  alt="food image" />
+                  src={choux2}  className='absolute top-0 z-0 '  alt="food image" />
               <img
                   src={choux1}
-                  className='absolute bottom-3 right-0 z-0'
+                  className='absolute bottom-3 right-0 z-0   '
                   alt="food image" />
           </div>
            

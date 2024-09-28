@@ -9,6 +9,7 @@ module.exports = {
   ],
   prefix: "",
   theme: {
+   
     container: {
       center: true,
       padding: "2rem",
@@ -20,6 +21,11 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        display: 'Raleway, ui-serif',
+        body: 'Poppins, ui-serif',
+        title: 'Tinos, ui-serif',
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
