@@ -1,7 +1,12 @@
+import { useLocation } from "react-router-dom";
 import Logo from "../logo/Logo"
  const Footer = () => {
+    const location = useLocation()
+  // Check if the pathname starts with /dashboard
+  const isDashboardPath = /^\/dashboard(\/.*)?$/.test(location.pathname);
   return (
-    <footer className="w-full px-[164px] mt-20 pt-[149px] pb-[74px] bg-primary text-primary-foreground " >
+    <footer className={`${isDashboardPath  ? 'hidden' :'flex' } w-full px-[164px] justify-between items-center mt-20 pt-[149px]  pb-[74px] bg-primary text-primary-foreground`}>  
+     
       
           
           <div className="flex justify-between">
