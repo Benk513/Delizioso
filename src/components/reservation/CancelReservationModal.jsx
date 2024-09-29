@@ -2,13 +2,10 @@ import Logo from "@/components/logo/Logo"
 import { Button } from "@/components/ui/button"
 import {  Dialog,  DialogContent,  DialogDescription, DialogHeader,  DialogTitle,  DialogTrigger,
 } from "@/components/ui/dialog"
- import { Calendar, CalendarIcon, CheckSquare, Clock, Edit, User2, X } from "lucide-react"
-import { Textarea } from "@/components/ui/textarea"
-import { ScrollArea } from "@/components/ui/scroll-area"
-import plate2 from '/images/plate2.png'
+ import { Calendar, CalendarIcon, CheckSquare, Clock, User2} from "lucide-react"
+  import plate2 from '/images/plate2.png'
 
-import {Select,SelectContent,SelectGroup,SelectItem,SelectLabel, SelectTrigger,  SelectValue,} from "@/components/ui/select"
-const CancelReservationModal = () => {
+ const CancelReservationModal = () => {
 
   return (
     <Dialog>

@@ -9,9 +9,7 @@ import resto from '/images/resto.png'
 import {Select,SelectContent,SelectGroup,SelectItem,SelectLabel, SelectTrigger,  SelectValue,} from "@/components/ui/select"
 import { useState } from "react"
 import ReservationModal from "@/components/reservation/modals/ReservationModal"
-import ConfirmReservationModal from "@/components/reservation/modals/ConfirmReservationModal"
-import CancelReservationModal from "@/components/reservation/CancelReservationModal"
-
+ 
 
 const Reservation = () => {
   const [date, setDate] = useState()
@@ -103,13 +101,12 @@ const Reservation = () => {
       </SelectContent>
     </Select>
     <Button variant="secondary" className="mt-5 w-[300px] h-[50px]" size='lg'> Book now</Button>
+
+<ReservationModal/>
     </form>
     </div>
 
 <div>
-<ReservationModal/>
-<ConfirmReservationModal/>
-<CancelReservationModal/>
 
 </div>
 

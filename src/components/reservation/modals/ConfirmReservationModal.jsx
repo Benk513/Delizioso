@@ -19,8 +19,8 @@ const ReservationDetailsModal = () => {
           <DialogTitle className='text-center'>            
            
           </DialogTitle>
-
           
+                    
           <DialogDescription>
           <div className=" bg-[#3FC66E] w-full space-y-3 py-4 px-4 text-white/90">
             <h1 className="text-3xl font-semibold mb-4">Reservation has been confirmed</h1>
