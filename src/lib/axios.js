@@ -9,7 +9,7 @@ const axiosInstance = axios.create({
 
         },
      /*    important for scenarios where you need to send cookies to the server for authentication purposes. */
-    //  withCredentials:true 
+      withCredentials:true 
      // send a cookie to the server every req , this is how we check auth
     //   is used to indicate that the browser should include
     //  any cookies associated with the requested domain in the outgoing request.
