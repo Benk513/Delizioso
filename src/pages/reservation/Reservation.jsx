@@ -10,7 +10,6 @@ import {Select,SelectContent,SelectGroup,SelectItem,SelectLabel, SelectTrigger, 
 import { useState } from "react"
 import ReservationModal from "@/components/reservation/modals/ReservationModal"
 import ConfirmReservationModal from "@/components/reservation/modals/ConfirmReservationModal"
-import ReservationDetailsModal from "@/components/reservation/modals/ReservationDetailsModal"
 import CancelReservationModal from "@/components/reservation/CancelReservationModal"
 
 
@@ -76,7 +75,7 @@ const Reservation = () => {
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>
-          <SelectLabel>Fruits</SelectLabel>
+          <SelectLabel>Event Hour</SelectLabel>
           <SelectItem value="apple">13h -15h</SelectItem>
           <SelectItem value="banana">15h-18h</SelectItem>
           <SelectItem value="blueberry">18h-20h</SelectItem>
@@ -84,16 +83,18 @@ const Reservation = () => {
          </SelectGroup>
       </SelectContent>
     </Select>
+
+
     <Select>
       <SelectTrigger className="w-[300px] h-[50px] mt-5 bg-slate-200/20 border-none">
         <SelectValue placeholder="Party Size" />
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>
-          <SelectLabel>Fruits</SelectLabel>
-          <SelectItem value="apple">2 seats </SelectItem>
-          <SelectItem value="banana">3 seats</SelectItem>
-          <SelectItem value="blueberry">4 seats</SelectItem>
+          <SelectLabel>Event Size</SelectLabel>
+          <SelectItem value="2">2 people </SelectItem>
+          <SelectItem value="3">3 seats</SelectItem>
+          <SelectItem value="4">4 seats</SelectItem>
            <SelectItem value="6">6 seats</SelectItem>
           <SelectItem value="8">8 seats</SelectItem>
           <SelectItem value="10">10 seats</SelectItem>
@@ -107,7 +108,6 @@ const Reservation = () => {
 
 <div>
 <ReservationModal/>
-<ReservationDetailsModal/>
 <ConfirmReservationModal/>
 <CancelReservationModal/>
 
