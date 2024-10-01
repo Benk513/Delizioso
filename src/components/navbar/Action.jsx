@@ -1,14 +1,13 @@
 import { LogIn, LogOut, UserPlus } from "lucide-react";
 import { Button } from "../ui/button"
 import { PiShoppingCart } from "react-icons/pi";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {  Avatar,  AvatarFallback,  AvatarImage,} from "@/components/ui/avatar"
 import {  DropdownMenu,  DropdownMenuContent,  DropdownMenuGroup,  DropdownMenuItem,  DropdownMenuLabel,
   DropdownMenuPortal,  DropdownMenuSeparator,  DropdownMenuShortcut,  DropdownMenuSub,  DropdownMenuSubContent,
   DropdownMenuSubTrigger,  DropdownMenuTrigger,} from "@/components/ui/dropdown-menu"
 
   import {
-    CreditCard,
     LifeBuoy,
     Mail,
     MessageSquare,
@@ -47,7 +46,7 @@ const Action = () => {
              
           </div>}
 
-          {isAdmin ?<Button variant="secondary" size="lg">Dashboard</Button> :''}
+          {isAdmin ?<Button variant="secondary"><Link to='dashboard'  size="lg">Dashboard</Link></Button> :''}
 
           { user ? <>
 
@@ -67,11 +66,7 @@ const Action = () => {
             <span>Profile</span>
             <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
           </DropdownMenuItem>
-          <DropdownMenuItem>
-            <CreditCard className="mr-2 h-4 w-4" />
-            <span>Billing</span>
-            <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
-          </DropdownMenuItem>
+                  
           <DropdownMenuItem>
             <Settings className="mr-2 h-4 w-4" />
             <span>Settings</span>
