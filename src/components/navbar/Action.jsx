@@ -35,6 +35,7 @@ const Action = () => {
   const navigate = useNavigate()
   return (
       <div className="flex gap-4 items-center justify-between">
+         { isAdmin ?'':
           <div
            className="bg-slate-100 relative py-4 px-4 rounded-full hover:cursor-pointer"
            onClick={()=>navigate('/cart')}>
@@ -44,7 +45,7 @@ const Action = () => {
               }
               
              
-          </div>
+          </div>}
 
           {isAdmin ?<Button variant="secondary" size="lg">Dashboard</Button> :''}
 
