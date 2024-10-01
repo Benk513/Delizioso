@@ -8,12 +8,17 @@ const Navbar = () => {
   
   const location = useLocation()
   // Check if the pathname starts with /dashboard
-  const isDashboardPath = /^\/dashboard(\/.*)?$/.test(location.pathname);
+  // const isDashboardPath = /^\/dashboard(\/.*)?$/.test(location.pathname);
+  
+  // Define a regex to match /login, /signup, /forgot-password, and /dashboard
+  const hideNavbarPaths = /^\/(dashboard(\/.*)?|login|signup|forgotPassword|resetPassword)$/;
 
+  // Check if the current pathname matches any of the hide paths
+  const shouldHideNavbar = hideNavbarPaths.test(location.pathname);
 
   
   return (
-    <header className={`${isDashboardPath  ? 'hidden' :'flex' } w-full px-[164px] justify-between items-center py-5 `}>           
+    <header className={`${shouldHideNavbar ? 'hidden' :'flex' } w-full px-[164px] justify-between items-center py-5 `}>           
           <Logo />
           <Navigation/>
       <MobileNavigation />

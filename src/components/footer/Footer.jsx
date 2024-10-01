@@ -1,11 +1,19 @@
 import { useLocation } from "react-router-dom";
 import Logo from "../logo/Logo"
  const Footer = () => {
-    const location = useLocation()
-  // Check if the pathname starts with /dashboard
-  const isDashboardPath = /^\/dashboard(\/.*)?$/.test(location.pathname);
+   // Check if the pathname starts with /dashboard
+ // const isDashboardPath = /^\/dashboard(\/.*)?$/.test(location.pathname);
+
+  const location = useLocation()
+  // Define a regex to match /login, /signup, /forgot-password, and /dashboard
+   // Define a regex to match /login, /signup, /forgot-password, and /dashboard
+   const hideNavbarPaths = /^\/(dashboard(\/.*)?|login|signup|forgotPassword|resetPassword)$/;
+ 
+
+  // Check if the current pathname matches any of the hide paths
+  const shouldHideNavbar = hideNavbarPaths.test(location.pathname);
   return (
-    <footer className={`${isDashboardPath  ? 'hidden' :'flex' } w-full px-[164px] justify-between items-center mt-20 pt-[149px]  pb-[74px] bg-primary text-primary-foreground`}>  
+    <footer className={`${shouldHideNavbar  ? 'hidden' :'flex' } w-full px-[164px] justify-between items-center mt-20 pt-[149px]  pb-[74px] bg-primary text-primary-foreground`}>  
      
       
           
