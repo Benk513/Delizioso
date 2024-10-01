@@ -110,15 +110,10 @@ const Reservation = () => {
 
 </div>
 
-    </div>
+</div>
 
   )
 }
 
 
 export default Reservation
-
-
-
-
- 
