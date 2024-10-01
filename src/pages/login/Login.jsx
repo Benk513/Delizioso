@@ -72,11 +72,11 @@ const Login = () => {
             <Checkbox id="terms1" />             
             <p className="text-base text-muted-foreground">Remember me</p>       
             </div>
-            <Link onClick={() =>{
+            <Link to="/forgotPassword" className="hover:text-accent transition-all duration-300" onClick={() =>{
               console.log('hit !!')
             
               }
-            }>Forget Password?</Link>
+            }>Forgot Password?</Link>
             </div>
 
             <div className="flex flex-col mt-10 space-y-2">
