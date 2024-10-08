@@ -23,6 +23,7 @@ import useUserStore from "@/store/useUserStore";
 const Action = () => {
 
   const user = useUserStore((state)=> state.user)
+  const logout = useUserStore((state)=> state.logout)
 
   const isAdmin = user?.role ==="admin"
   const cartItems = user?.cartItems.length
@@ -61,10 +62,10 @@ const Action = () => {
         <DropdownMenuLabel>My Account</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
-          <DropdownMenuItem>
+          <DropdownMenuItem onClick={() => navigate('profile')}>
             <User className="mr-2 h-4 w-4" />
             <span>Profile</span>
-            <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
+         
           </DropdownMenuItem>
                   
           <DropdownMenuItem>
@@ -110,7 +111,7 @@ const Action = () => {
         </DropdownMenuItem>
         
         <DropdownMenuSeparator />
-        <DropdownMenuItem  >
+        <DropdownMenuItem  onClick={logout} >
           <LogOut className="mr-2 h-4 w-4" />
           <span>Log out</span>
            
