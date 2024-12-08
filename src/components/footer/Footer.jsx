@@ -7,8 +7,7 @@ import Logo from "../logo/Logo"
   const location = useLocation()
   // Define a regex to match /login, /signup, /forgot-password, and /dashboard
    // Define a regex to match /login, /signup, /forgot-password, and /dashboard
-   const hideNavbarPaths = /^\/(dashboard(\/.*)?|login|signup|forgotPassword|resetPassword)$/;
- 
+   const hideNavbarPaths = /^\/(dashboard(\/.*)?|login|signup|forgotPassword|resetPassword|profile(\/.*)?)$/;
 
   // Check if the current pathname matches any of the hide paths
   const shouldHideNavbar = hideNavbarPaths.test(location.pathname);
