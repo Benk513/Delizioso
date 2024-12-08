@@ -130,23 +130,27 @@ const Cart = () => {
             <h1 className=" font-body font-semibold text-2xl">Order summary</h1>
             <div>
 
-                <div className="flex justify-between items-center border-b border-gray-400">
+                <div className="flex justify-between items-center border-b border-gray-400 pb-2">
                     <p>Original price</p>
                     <p>$24.1</p>
                 </div>
                  
 
                 <div className="flex justify-between items-center text-slate-400 font-semibold">
+                    <p>Delivery fee</p>
+                    <p>$4.0</p>
+                </div>
+                <div className="flex justify-between items-center text-slate-400 font-semibold">
                     <p>Voucher</p>
-                    <p>$24.1</p>
+                    <p>$0.0</p>
                 </div>
                 <div className="flex justify-between items-center text-slate-400 font-semibold">
                     <p>Tax fee</p>
-                    <p>$24.1</p>
+                    <p>$2</p>
                 </div>
                 <div className=" my-2 flex justify-between items-center ">
                     <p className=" font-body font-semibold text-xl">Total</p>
-                    <p className="text-accent font-bold text-xl">$24.1</p>
+                    <p className="text-accent font-bold text-xl">$30.1</p>
                 </div>
             </div>
 
