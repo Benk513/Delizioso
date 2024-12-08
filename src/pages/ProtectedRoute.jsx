@@ -1,5 +1,4 @@
 import { Navigate, Outlet } from 'react-router-dom';
-import Cookies from 'js-cookie';
 import useUserStore from '@/store/useUserStore';
 
 // ProtectedRoute Component

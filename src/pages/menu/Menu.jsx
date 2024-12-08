@@ -49,7 +49,7 @@ const Menu = () => {
       </div>
 
       {/* Search */}
-      <Input ref={inputRef} placeholder="Search..." className="w-[200px]    rounded-full border border-slate-200  text-sm ring-offset-white file:border-0 file:bg-transparent  placeholder:text-slate-500 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:cursor-not-allowed" />
+      <Input ref={inputRef} placeholder="Search..." className="w-[20vw]    rounded-full border border-slate-200  text-sm ring-offset-white file:border-0 file:bg-transparent  placeholder:text-slate-500 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:cursor-not-allowed" />
 
 
 
