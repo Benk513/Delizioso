@@ -1,10 +1,11 @@
 import { ArrowLeft, HeartIcon } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import bannerSpaghetti from '/images/plate2.png'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useRef } from 'react'
 
 const MenuDetail = () => {
+  const navigate = useNavigate()
 
   let counterRef = useRef(0)
 
@@ -19,7 +20,7 @@ const MenuDetail = () => {
  
   return (
     <div className='w-[1162px] mx-auto mt-10'>
-     <div><Link className='flex gap-2 text-slate-600'><ArrowLeft/>Retour</Link></div>
+     <div><Link onClick={navigate(-1)} className='flex gap-2 text-slate-600'><ArrowLeft/>Retour</Link></div>
       
       <div className=' mt-5 flex gap-10 justify-between'>
 
