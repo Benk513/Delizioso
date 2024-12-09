@@ -9,6 +9,7 @@ import useUserStore from "@/store/useUserStore"
 import { useState } from "react"
 import axios from "axios"
 import { Progress } from "@/components/ui/progress"
+import FileUploader from "./FileUploader"
 
 
 const EditProfile = () => {
@@ -23,32 +24,6 @@ const userPhoto = user?.photo === 'default.jpg'
 
 
 
-const [photo, setPhoto] = useState()
-
-const submitImage =async(e) =>{
-  e.preventDefault()
-  const formData = new FormData()
-  formData.append('file', photo)
-  // Call the API to update the user's image
-  // For demonstration purposes, we'll assume the API endpoint is '/api/update-image'
-  // In a real application, you'd replace this with your actual API endpoint
-
-   const response = await axios.patch("http://localhost:5000/api/v1/users/updateMe", formData,{
-    headers: {
-      'Content-Type': 'multipart/form-data',
-        withCredentials:true 
-      
-      },
-  })
-  console.log(response.data)
-}
-
-
-
-const onInputChange = (e) =>{
-  console.log(e.target.files[0])
-  setPhoto(e.target.files[0])
-}
 
 
   return (
@@ -56,34 +31,8 @@ const onInputChange = (e) =>{
       <h1 className="text-3xl font-semibold text-gray-600 mb-4">Edit Profile</h1>
 
       <div className="bg-white rounded-2xl pb-10">
-
     {/* profile section  */}
-      <form onSubmit={submitImage}
-      className="flex py-8 justify-between gap-10 items-center px-10" >
-        <div className="flex items-center justify-between gap-10">
-
-        <Avatar className="size-[150px]">
-        <AvatarImage src={`http://localhost:5000`+userPhoto} alt={`${user?.name}`}/>
-        <AvatarFallback className="text-2xl font-medium">User</AvatarFallback>
-        </Avatar>
-        
-        <div className="flex flex-col gap-4">
-
-            <Input
-            type="file"
-            accept="image/*"
-            onChange={onInputChange}
-            className="w-60 rounded-xl"
-            />
-            <Progress value={33} />
-
-            <Label className="text-black/40 text-md">At least 500*500 px recommended. <br /> JPG or PNG is allowed.</Label>
-        
-        </div>
-        </div>
-        <Button variant="outline" className="gap-4"> <UploadCloud /> Upload</Button>
-    </form>
-    
+     <FileUploader/>
     <Separator  className="bg-gray-300"/>
     
          
