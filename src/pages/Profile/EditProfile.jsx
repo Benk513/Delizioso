@@ -8,6 +8,7 @@ import { Separator } from "@/components/ui/separator"
 import useUserStore from "@/store/useUserStore"
 import { useState } from "react"
 import axios from "axios"
+import { Progress } from "@/components/ui/progress"
 
 
 const EditProfile = () => {
@@ -74,6 +75,8 @@ const onInputChange = (e) =>{
             onChange={onInputChange}
             className="w-60 rounded-xl"
             />
+            <Progress value={33} />
+
             <Label className="text-black/40 text-md">At least 500*500 px recommended. <br /> JPG or PNG is allowed.</Label>
         
         </div>
