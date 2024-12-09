@@ -1,30 +1,16 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Button } from "@/components/ui/button"
 import {  Dialog,  DialogContent,  DialogDescription,  DialogFooter,  DialogHeader,  DialogTitle,  DialogTrigger,} from "@/components/ui/dialog"
-import { Edit, UploadCloud } from "lucide-react"
+import { Edit } from "lucide-react"
 import { Separator } from "@/components/ui/separator"
 import useUserStore from "@/store/useUserStore"
-import { useState } from "react"
-import axios from "axios"
-import { Progress } from "@/components/ui/progress"
 import FileUploader from "./FileUploader"
 
 
 const EditProfile = () => {
 
 const user = useUserStore(state =>state.user)
-
-//This code checks if the user's photo is 'default.jpg' and displays the default image URL if it is. Otherwise, it shows the user's uploaded image.
-// Construct the image URL based on the user photo
-const userPhoto = user?.photo === 'default.jpg' 
-? '/images/users/default.jpg'  // Point to the default image
-: `/images/users/${user?.photo}`;  // Point to the actual user photo if available
-
-
-
-
 
   return (
     <div className="w-full text-black  p-10 ">
@@ -188,10 +174,7 @@ const userPhoto = user?.photo === 'default.jpg'
       <p className="text-black/70 text-lg leading-8">{user?.bio} </p>
   
       </div>    
-
       </section>
-
-
       </div>
     </div>
   )
