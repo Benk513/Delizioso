@@ -22,6 +22,7 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { useEffect, useRef, useState } from "react";
 import { Input } from "@/components/ui/input";
+import useMenuStore from "@/store/useMenuStore";
 
 
 const Menu = () => {
@@ -29,9 +30,16 @@ const Menu = () => {
   const [position, setPosition] =useState("bottom")
   const inputRef = useRef(null)
 
+
+  const {getAllMenus} = useMenuStore()
+
   useEffect(()=>{
     
     inputRef.current.focus()
+  },[])
+
+  useEffect(()=>{
+    getAllMenus()
   },[])
   
   return (
