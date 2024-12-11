@@ -4,7 +4,7 @@ import Login from './pages/login/Login'
 import Home from './pages/home/Home'
 import Reservation from './pages/reservation/Reservation'
 import Cart from './pages/cart/Cart'
-import Menu from './pages/menu/Menu'
+import Menu from './pages/menu/MenuPage'
 import Contact from './pages/contact/Contact'
 import About from './pages/about/About'
 import Signup from './pages/signup/Signup'
@@ -30,6 +30,7 @@ import DeleteAccount from './pages/Profile/DeleteAccount'
 import { Toaster } from './components/ui/sonner'
 import DemoPage from './components/payment/page'
 import Users from './pages/dashboard/Users'
+import MenuPage from './pages/menu/MenuPage'
 function App() {
 
   const initialize = useUserStore((state) => state.initialize);
@@ -50,7 +51,7 @@ function App() {
       <Route index element={<Home />} />
       <Route path="about" element={<About />} />
       <Route path="contact" element={<Contact />} />
-      <Route path="menu" element={<Menu />} />
+      <Route path="menu" element={<MenuPage />} />
       <Route path="menu/:id" element={<MenuDetail />} />
 
 
