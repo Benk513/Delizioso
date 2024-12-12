@@ -14,7 +14,6 @@ import { DevTool } from "@hookform/devtools"
 
 const schema = yup
   .object({
-    
     email: yup.string().required("email is Required").email("Invalid email format"),
     
     // password: yup.string().required("Password is Required").min(8,"Password must be at least 8 characters").max(20,"Password must be at most 20 characters").matches(/[!@#$%^&*(),.?":{}|<>]/,"Password must contain at least one symbol").matches(/[0-9]/, "Password must contain at least one number").matches(/[A-Z]/, "Password must contain at least one uppercase letter").matches(/[a-z]/, "Password must contain at least one lowercase letter"),   
@@ -31,7 +30,7 @@ const Login = () => {
 
 
 
-  const onSubmit = async (data) =>   login(data)
+  const onSubmit = async (data) =>login(data)
 
   return (
     <div className="h-screen w-full bg-slate-50 flex items-center justify-center">
@@ -89,8 +88,7 @@ const Login = () => {
 
      </form>
 
-     <div className=" relative overflow-hidden">
-      
+     <div className=" relative overflow-hidden">      
                   {/* plat legumes */}
                   <img src={plate2} className="w-[1000px] h-[600px] -top-[8%] object-cover  absolute -right-[20%] z-10" alt="food image" />          
                   
@@ -101,7 +99,6 @@ const Login = () => {
                  
                   <div className=" absolute -right-[45%] -top-[15%] bg-accent opacity-100 rounded-full size-[650px]"></div>
               
-           
      </div>
      <DevTool control={control}/>
      </div>

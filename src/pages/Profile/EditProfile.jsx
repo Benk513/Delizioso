@@ -6,12 +6,22 @@ import { Edit } from "lucide-react"
 import { Separator } from "@/components/ui/separator"
 import useUserStore from "@/store/useUserStore"
 import FileUploader from "./FileUploader"
+import { Textarea } from "@/components/ui/textarea"
+import { useState } from "react"
 
 
 const EditProfile = () => {
 
 const user = useUserStore(state =>state.user)
 
+
+const {updateBio} = useUserStore()
+
+const [bio , setBio] =useState('')
+const handleChange = (event) => setBio(event.target.value);
+const onSubmit = async (bio) =>updateBio(bio)
+
+console.log(user?.bio)
   return (
     <div className="w-full text-black  p-10 ">
       <h1 className="text-3xl font-semibold text-gray-600 mb-4">Edit Profile</h1>
@@ -134,36 +144,34 @@ const user = useUserStore(state =>state.user)
 
 
 {/* bio info */}
-      <section className="  border-gray-300  border mx-10 px-5 rounded-xl my-4  ">
+      <form onSubmit={onSubmit} className="  border-gray-300  border mx-10 px-5 rounded-xl my-4  ">
       <div className="flex items-center justify-between my-4">
       <h3 className="text-xl font-semibold">Bio</h3>
-      <Dialog>
+      <Dialog className="w-full">
       <DialogTrigger asChild>
-        <Button variant="outline" className="gap-2"><Edit size={15}/> Edit </Button>
+        <Button variant="outline" className="gap-2"><Edit size={15}/> Edit  </Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px]">
+      <DialogContent >
         <DialogHeader>
-          <DialogTitle>Edit</DialogTitle>
+          <DialogTitle>Edit bio</DialogTitle>
           <DialogDescription>
-            Make changes to your profile here. Click save when you are done.
+           Update your bio information here
           </DialogDescription>
         </DialogHeader>
         <div className="grid gap-4 py-4">
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="name" className="text-right">
-              Name
-            </Label>
-            <Input id="name" value="Pedro Duarte" className="col-span-3" />
+          <div className=" items-center gap-2">
+           
+            <Textarea 
+            id="name" 
+            className="col-span-3"
+            placeholder="Type your content here."
+            value={bio} onChange={handleChange}  />
           </div>
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="username" className="text-right">
-              Username
-            </Label>
-            <Input id="username" value="@peduarte" className="col-span-3" />
-          </div>
+          
         </div>
         <DialogFooter>
-          <Button type="submit">Save changes</Button>
+          <Button type="submit"
+         >Save changes</Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>
@@ -171,10 +179,10 @@ const user = useUserStore(state =>state.user)
       </div>
 
       <div className="grid grid-cols-1 max-w-[800px] my-4  ">
-      <p className="text-black/70 text-lg leading-8">{user?.bio} </p>
+      <p className="text-black/70 text-lg leading-8">{user?.bio}</p>
   
       </div>    
-      </section>
+      </form>
       </div>
     </div>
   )

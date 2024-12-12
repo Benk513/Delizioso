@@ -1,4 +1,3 @@
-// this is a global user state manager
 import { create } from 'zustand'
 import axios from './../lib/axios'
 import { toast } from "sonner"
@@ -85,8 +84,8 @@ const useUserStore = create((set) => ({
       set({ user: res.data.data });
       localStorage.setItem('user', JSON.stringify(res.data.data));
     } catch (err) {
-      console.log('User is not authenticated or session has expired', err);
-      toast.error('User is not authenticated or session has expired')
+      console.log(err.response.data);
+      toast.error(err.response.data)
 
       set({ user: null });
       localStorage.removeItem('user');
@@ -161,6 +160,20 @@ const useUserStore = create((set) => ({
   getProfile: async () => {
     try {
       const res = await axios.get("api/v1/users/me")
+      set({ user: res.data.data.user })
+
+    } catch (error) {
+
+      console.log(error)
+    }
+  },
+
+  updateBio: async ({bio}) => {
+    try {
+      const res = await axios.patch("api/v1/users/updateMe",{bio},{
+        headers:{
+            'Content-Type':'application/json',
+        }})
       set({ user: res.data.data.user })
 
     } catch (error) {

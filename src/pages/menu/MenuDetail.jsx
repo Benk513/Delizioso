@@ -1,23 +1,27 @@
 import { ArrowLeft, HeartIcon } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import bannerSpaghetti from '/images/plate2.png'
-import { Link, useNavigate } from 'react-router-dom'
-import { useRef } from 'react'
+import { Link, useNavigate, useParams } from 'react-router-dom'
+import {useEffect } from 'react'
+import useMenuStore from '@/store/useMenuStore'
 
 const MenuDetail = () => {
   const navigate = useNavigate()
 
-  let counterRef = useRef(0)
+  const {getMenu, menu,loading, error} = useMenuStore()
+  const {id}= useParams()
+  console.log(id)
 
-  
-    function incrementCounter(){
-      counterRef.current = counterRef.current +1
-      console.log(counterRef.current)
-    };
+ console.log(menu)
+ useEffect(() => {
+  // Fetch the menu data when the component mounts
+  getMenu({id});
+}, [id, getMenu]);
 
-   
 
- 
+ // Handle loading and error states
+ if (loading) return <p>Loading...</p>;
+ if (error) return <p>Error: {error}</p>;
   return (
     <div className='w-[1162px] mx-auto mt-10'>
      <div><Link onClick={navigate(-1)} className='flex gap-2 text-slate-600'><ArrowLeft/>Retour</Link></div>
@@ -48,7 +52,7 @@ const MenuDetail = () => {
             </div>
 
             <div className='flex'>
-                <Button onClick={incrementCounter}>Order Now</Button>
+                <Button>Order Now</Button>
                 <Button variant="muted"><HeartIcon/></Button>
             </div>
         </div>
